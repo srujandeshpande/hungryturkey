@@ -12,6 +12,14 @@ var config = {
 
 var pool = new pg.Pool(config);
 
+
+(async () => {
+  const client = await pool.connect();
+  var lol = await client.query('CREATE TABLE IF NOT EXISTS food_tb (id UUID PRIMARY KEY, address STRING, food STRING, quant STRING);');
+  client.release()
+})();
+
+
 console.log("Enter 1 to add new food.");
 console.log("Enter 2 to view all food.");
 
@@ -21,9 +29,21 @@ if(choice == 1){
   let address = prompt("Enter address: ");
   let food = prompt("Enter type of food: ");
   let quant = prompt("Enter approx. number of servings: ");
+  var id = uuidv1();
+
+  (async () => {
+    const client = await pool.connect();
+    var lol = await client.query(`INSERT INTO food_tb (id, address, food, quant) VALUES ('${id}', '${address}', '${food}', '${quant}');`);
+    console.log("Successfully added! Thanks for your contribution :)")
+    client.release()
+  })();
 }
 else{
-  //display all data
+  (async () => {
+    const client = await pool.connect();
+    var res = await client.query(`SELECT address,food,quant FROM food_tb;`);
+    console.log(res.rows);
+    client.release()
+  })();
+  console.log("Happy Holidays!");
 }
-
-console.log(guess);
