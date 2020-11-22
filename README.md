@@ -2,7 +2,7 @@
 Don't waste food!
 
 ## Inspiration
-During the holiday season and even during other times, we see that a lot of food is generally wasted from events, parties and get-togethers. This wasted food, instead of going to a landfill can be used to feed someone for example:
+During the holiday season and even during other times, we see that a lot of food is generally wasted from events, parties, and get-togethers. This wasted food, instead of going to a landfill can be used to feed someone for example:
 - Homeless people
 - Orphanages
 - Homeless Shelters
@@ -29,7 +29,7 @@ The technology used is:
 Learned something new!
 
 ## What we learned
-Working with Node.js, Cockraoch DB and Google Cloud Platform
+Working with Node.js, Cockroach DB, and Google Cloud Platform
 
 ## What's next for Hungry Turkey
 - Make a GUI website/mobile app to make it easy to use
