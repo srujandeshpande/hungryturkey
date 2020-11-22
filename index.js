@@ -19,7 +19,7 @@ var pool = new pg.Pool(config);
   client.release()
 })();
 
-
+console.log("Welcome to Hungry Turkey!");
 console.log("Enter 1 to add new food.");
 console.log("Enter 2 to view all food.");
 
